@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+
+# Virtual environments
+env/
+venv/
+.cuda_env/
+*.env
+
+# Model files / large binaries
+*.pt
+*.pth
+models/
+
+# Data
+*.csv
+*.tsv
+data/
+
+# Logs and outputs
+*.log
+*.out
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook metadata (if any)
+.ipynb_checkpoints/
+
+# Streamlit cache
+.streamlit/
+
+# VSCode and IDE stuff
+.vscode/
+.idea/
+
+# Environment configs
+*.env
+.env.*
+*.local
