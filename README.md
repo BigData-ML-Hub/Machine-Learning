@@ -63,7 +63,7 @@ This repository serves as my personal learning hub for mastering **Machine Learn
 📁 ML-Repository/
  ├── 📂 Notes/          # Theory & explanations
  ├── 📂 Projects/       # Hands-on projects
- ├── 📂 Code/          # Code implementations
- ├── 📂 Datasets/      # Sample datasets
- ├── README.md         # This file
+ ├── 📂 Code/           # Code implementations
+ ├── 📂 .devcontainer/  # Docker files
+ ├── README.md          # This file
 ```
