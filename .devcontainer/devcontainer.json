@@ -1,0 +1,40 @@
+{
+    "name": "PyTorch Dev",
+    "dockerFile": "Dockerfile",
+    "build": {
+      "args": {
+        "WORKSPACE": "${containerWorkspaceFolder}",
+        "USERNAME": "${localEnv:USER}"
+      }
+    },
+    "workspaceFolder": "/workspace",  // Updated workspace folder for PyTorch
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",  // Mount local folder
+    "remoteUser": "${localEnv:USER}",
+    "runArgs": [
+      "--network=host",  // Networking configurations are similar if needed for your setup
+      "--cap-add=SYS_PTRACE",
+      "--security-opt=seccomp:unconfined",
+      "--security-opt=apparmor:unconfined",
+      "--ipc=host",
+      "--gpus",
+      "all"  // Retaining GPU support for PyTorch (if using a CUDA-compatible GPU)
+    ],
+    "mounts": [
+      "source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind"  // Optional mount for SSH keys
+    ],
+    "containerEnv": {
+      "DISPLAY": "unix:1"  // This might be optional if not using GUI-based tools
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",   // Python support
+          "ms-toolsai.jupyter", // Jupyter support for notebooks
+          "ms-vscode.cpptools",  // C++ support (helpful for PyTorch C++ extensions)
+          "swellaby.node-pack",
+          "rockingskier.copy-copy-paste"
+        ]
+      }
+    }
+  }
+  
